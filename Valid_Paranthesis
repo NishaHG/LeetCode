@@ -1,0 +1,19 @@
+def isvalid(input_string):
+    stack=[]
+    bracket_map={')':'(',']':'[','}':'{'}
+    for char in input_string:
+        if char in bracket_map.values():
+            stack.append(char)
+        elif char in bracket_map.keys():
+            if not stack or stack[-1]!=bracket_map[char]:
+                return False
+            stack.pop()
+        else:
+            return False
+    return not stack
+
+input_string=input("enter your string : ")
+if isvalid(input_string):
+    print("VALID STRING")
+else:
+    print("INVALID STRING")
