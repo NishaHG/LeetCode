@@ -1,0 +1,34 @@
+### reversing a number
+# num=int(input("Enter a number: "))
+# rev=0
+# while(num>0):
+#     digit=num%10
+#     rev=rev*10+digit
+#     num=num//10
+# print(rev)
+
+
+#### revere a string "i love india"
+# s="i love india"
+# s=s.replace("india","india"[::-1])
+# print(s)
+
+#2
+# s="i bright python"
+# s1=s[::-1]
+# print(s1)
+
+##3    here it will give o/p as entire ststmt with last reversible string
+# s="i eat mango"
+# words=s.strip().split()
+# words[-1]=words[-1][::-1]           #words[-1] -- in the place itself, it reverses only the last word.
+# result=' '.join(words)
+# print(result)
+
+
+##4 here it will give only the reversed word as o/p
+s=input("enter a string : ")
+words=s.strip().split()
+words=words[-1][::-1]
+result=' '.join(words)
+print(result)
