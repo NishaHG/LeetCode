@@ -1,0 +1,10 @@
+l=int(input("Enter the number: "))
+r=int(input("Enter the range: "))
+sum=0
+if l>r:
+    print("The range is greater than the number")
+    exit()
+else:
+    for i in range(l,r+1):
+        sum+=i
+    print(sum)
