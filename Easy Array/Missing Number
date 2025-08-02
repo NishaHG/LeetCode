@@ -4,7 +4,7 @@ class Solution:
         n=len(nums)
         for i in range(n+1):            ### [0,1,2,3]
             xoar^=i
-        for num in nums:               ### [0,3,1]   missing from above loop is 2
+        for num in nums:               ## [0,3,1]   missing from above loop is 2
             xoar^=num
         return xoar
         
