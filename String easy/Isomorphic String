@@ -1,0 +1,20 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        if len(s)!=len(t):
+            return False
+
+        s_dict = {}
+        used_t = set()
+
+        for cs , ct in zip(s,t):
+            if cs in s_dict:
+                if s_dict[cs]!=ct:
+                    return False
+            else:
+                if ct in used_t:
+                    return False
+                s_dict[cs] = ct 
+                used_t.add(ct)
+        return True
+
+        
