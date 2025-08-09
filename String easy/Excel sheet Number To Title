@@ -1,3 +1,5 @@
+#### : 1 ---->
+
 class Solution:
     def convertToTitle(self, columnNumber: int) -> str:
         result = []
@@ -5,6 +7,24 @@ class Solution:
             columnNumber -= 1  # Adjust for 1-based indexing
             remainder = columnNumber % 26
             result.append(chr(remainder + ord('A')))
+            columnNumber //= 26
+        return ''.join(reversed(result))
+
+
+
+
+
+
+### : 2 ---> WITHOUT USING BUILT IN FUNCTIONS
+
+
+def convertToTitle(self, columnNumber: int) -> str:
+        alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        result = []
+        while columnNumber > 0:
+            columnNumber -= 1  # Adjust for 1-based indexing
+            remainder = columnNumber % 26
+            result.append(alphabet[remainder])
             columnNumber //= 26
         return ''.join(reversed(result))
         
