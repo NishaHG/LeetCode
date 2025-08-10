@@ -1,3 +1,7 @@
+
+
+
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -27,6 +31,17 @@ class Solution:
 
 
 
+Complexity
+--------------
+Time Complexity: O(N²) in worst case
+(N nodes, and each path string concatenation can be O(N) long)
 
+Space Complexity: O(N) for recursion stack
 
-        
+Approach 1 — DFS (Depth-First Search)
+-----------------------------------------
+We can do a recursive traversal:
+start from the root.
+Add the current node’s value to a path.
+If it’s a leaf, store the path in the result list.
+If not, continue to left and right children.
