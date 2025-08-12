@@ -1,0 +1,28 @@
+#### 1 inplace we have to reverse without return anything
+
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        
+        s.reverse() # reverses in place, O(1) extra space
+
+######  2
+
+ s[:] = s[::-1]  # creates reversed copy, then overwrites original
+
+ ----->   Here s[::-1] creates a reversed copy, but s[:] = ... ensures we modify the same list in place, not create a new list.
+
+##### 3
+The two-pointer method is best for interviews because it’s language-agnostic and shows algorithmic thinking,
+while reverse() or slicing is more Pythonic but hides the logic.
+
+left , right = 0,len(s)-1
+
+while left<right
+    s[left],s[right]=s[right],s[left]
+     left+=1
+     right-=1
+
+
