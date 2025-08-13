@@ -1,0 +1,23 @@
+k=3
+maximum=0
+count=0
+left=0
+right=k
+s="abciiidef"
+vowels='aeiou'
+
+for i in range(k):
+    if s[i] in vowels:
+        count+=1
+    maximum=count
+
+while right<len(s):
+    if s[left] in vowels:
+        count-=1
+    left+=1
+    if s[right] in vowels:
+        count+=1
+    right+=1
+    maximum= max( maximum,count)
+print( maximum)
+
