@@ -9,7 +9,7 @@ vowels='aeiou'
 for i in range(k):
     if s[i] in vowels:
         count+=1
-    maximum=count
+maximum=count
 
 while right<len(s):
     if s[left] in vowels:
