@@ -1,0 +1,19 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        i=0
+        for j in range(1,len(nums)):
+            if nums[j]!=nums[i]:
+                i+=1
+                nums[i]=nums[j]
+        return i+1
+
+
+#2 there is no in place modification
+def removeDuplicates(nums):
+    unique_nums = []  # extra space allowed
+    for num in nums:
+        if not unique_nums or unique_nums[-1] != num:
+            unique_nums.append(num)
+    return len(unique_nums), unique_nums
