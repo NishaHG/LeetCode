@@ -1,0 +1,33 @@
+## 1 : using Stack + Hashmap
+
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        stack=[]
+        nge_map={}
+
+        for num in nums2:
+            while stack and num>stack[-1]:
+                nge_map[stack.pop()]=num
+            stack.append(num)
+
+        while stack :
+            nge_map[stack.pop()]=-1
+
+        return [nge_map[num] for num in nums1]
+
+
+
+##2  Brute 
+
+class Solution:
+    def nextGreaterElement(self, nums1, nums2):
+        res = []
+        for x in nums1:
+            index = nums2.index(x)   # find position of x in nums2
+            ans = -1
+            for j in range(index + 1, len(nums2)):  # check right side
+                if nums2[j] > x:     # first greater element found
+                    ans = nums2[j]
+                    break
+            res.append(ans)
+        return res
