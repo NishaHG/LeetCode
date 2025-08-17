@@ -1,0 +1,73 @@
+
+###1  My logic
+
+class Solution:
+    def findRelativeRanks(self, score: List[int]) -> List[str]:
+        result=[]
+        sort_score=sorted(score,reverse=True)
+        for s in score:
+            rank=sort_score.index(s)+1
+            if rank==1:
+                result.append("Gold Medal")
+            elif rank==2:
+                result.append("Silver Medal")
+            elif rank==3:
+                result.append("Bronze Medal")
+            else:
+                result.append(str(rank))
+        return result
+            
+
+
+###2  :   mid level approach
+
+from typing import List
+
+class Solution:
+    def findRelativeRanks(self, score: List[int]) -> List[str]:
+        # Sort scores in descending order, keep original indices
+        sorted_scores = sorted([(s, i) for i, s in enumerate(score)], reverse=True)
+
+        result = [""] * len(score)
+
+        for rank, (s, idx) in enumerate(sorted_scores, start=1):
+            if rank == 1:
+                result[idx] = "Gold Medal"
+            elif rank == 2:
+                result[idx] = "Silver Medal"
+            elif rank == 3:
+                result[idx] = "Bronze Medal"
+            else:
+                result[idx] = str(rank)
+
+        return result
+
+
+
+### 3  :    Difficult level Approach
+
+class Solution:
+    def findRelativeRanks(self, score):
+        # Step 1: Pair each score with its index
+        indexed_scores = [(s, i) for i, s in enumerate(score)]
+        
+        # Step 2: Sort by score in descending order
+        indexed_scores.sort(reverse=True, key=lambda x: x[0])
+        
+        # Step 3: Prepare result array
+        n = len(score)
+        result = [""] * n
+        
+        # Step 4: Assign ranks
+        for rank, (s, i) in enumerate(indexed_scores, start=1):
+            if rank == 1:
+                result[i] = "Gold Medal"
+            elif rank == 2:
+                result[i] = "Silver Medal"
+            elif rank == 3:
+                result[i] = "Bronze Medal"
+            else:
+                result[i] = str(rank)
+        
+        return result
+
