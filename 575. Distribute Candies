@@ -1,0 +1,20 @@
+def distributecandies(candyTypes):
+    
+    unique_elements=len(set(candyTypes))
+    candy=min(unique_elements,n//2)
+    return candy
+
+
+
+##2 using Dictionary 
+
+class Solution:
+    def distributeCandies(self, candyType: list[int]) -> int:
+        freq = {}  # dictionary to track candy types
+        for candy in candyType:
+            freq[candy] = freq.get(candy, 0) + 1  # count occurrences
+        
+        unique_types = len(freq)  # number of unique candy types
+        return min(unique_types, len(candyType) // 2)
+
+  
