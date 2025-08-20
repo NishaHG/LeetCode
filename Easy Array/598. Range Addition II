@@ -1,3 +1,4 @@
+##  1
 class Solution:
     def maxCount(self, m: int, n: int, ops: List[List[int]]) -> int:
         if not ops:
@@ -6,4 +7,22 @@ class Solution:
         min_row=min(op[0] for op in ops)
         min_col=min(op[1] for op in ops)
         return min_row * min_col
+
         
+## 2 
+def maxCount(m, n, ops):
+    if not ops:
+        return m * n  
+
+    # initialize with large values
+    min_a = m
+    min_b = n
+
+    for op in ops:
+        a, b = op
+        if a < min_a:
+            min_a = a
+        if b < min_b:
+            min_b = b
+
+    return min_a * min_b
