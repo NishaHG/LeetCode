@@ -12,3 +12,20 @@ class Solution:
                     if count>=n:
                         return True
         return count >=n
+
+
+
+def flower(f):
+    count = 0
+    for i in range(len(f)):
+        if f[i] == 0:
+            left = (i == 0) or (f[i-1] == 0)   # handle left boundary
+            right = (i == len(f)-1) or (f[i+1] == 0)  # handle right boundary
+            
+            if left and right:
+                f[i] = 1  # place flower
+                count += 1
+    return count
+
+f = [1,0,0,0,1]
+print(flower(f))  # ✅ Output: 1
