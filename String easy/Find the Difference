@@ -1,0 +1,12 @@
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        result=[]
+        for ch in t:
+            if ch not in s:
+                result.append(ch)
+            else:
+                # remove one occurrence from s so duplicates work correctly
+                s = s.replace(ch, '', 1)
+        return result[0]
+        
+    
