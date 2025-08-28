@@ -1,0 +1,24 @@
+class Solution:
+    def findShortestSubArray(self, nums: List[int]) -> int:
+        from collections import defaultdict
+        
+        freq = defaultdict(int)
+        first = {}
+        last = {}
+        
+        for i, num in enumerate(nums):
+            freq[num] += 1
+            if num not in first:
+                first[num] = i
+            last[num] = i
+        
+        degree = max(freq.values())
+        min_length = len(nums)
+        
+        for num in freq:
+            if freq[num] == degree:
+                min_length = min(min_length, last[num] - first[num] + 1)
+        
+        return min_length
+
+        
