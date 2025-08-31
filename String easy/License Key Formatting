@@ -1,0 +1,11 @@
+class Solution:
+    def licenseKeyFormatting(self, s: str, k: int) -> str:
+        s=s.replace("-","").upper()
+
+        first_group_len = len(s) % k or k
+        res = s[:first_group_len]
+
+        for i in range(first_group_len, len(s),k):
+            res = res + "-" + s[i:i+k]
+        return res
+        
