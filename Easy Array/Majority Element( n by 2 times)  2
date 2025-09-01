@@ -10,3 +10,5 @@ def majority_element(nums):
 
 # Example
 print(majority_element([2,2,1,1,1,2,2]))  # Output: 2
+
+''' leetcode 169 '''
