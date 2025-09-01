@@ -1,0 +1,12 @@
+def majority_element(nums):
+    from collections import Counter
+    count = Counter(nums)
+    n = len(nums)
+    
+    for num, freq in count.items():
+        if freq > n // 2:
+            return num
+
+
+# Example
+print(majority_element([2,2,1,1,1,2,2]))  # Output: 2
