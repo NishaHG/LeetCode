@@ -1,3 +1,5 @@
+## 1 ------> without division   -- it will work for zero
+
 def product_except_self(nums):
     n = len(nums)
     result = [1] * n
@@ -20,7 +22,7 @@ print(product_except_self([1,2,3,4]))  # Output: [24,12,8,6]
 
 --------------------------------------------------------------------------------------------------
 
-# 2 ----->  It will not work for Zero
+# 2 ----->  with devision   ---It will not work for Zero
 
 def product_except_self_division(nums):
     total_product = 1
