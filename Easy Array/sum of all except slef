@@ -1,0 +1,15 @@
+def impactSum(arr, C):
+    total = sum(arr)
+    result = []
+    for x in arr:
+        impact = total - x
+        if impact > C:
+            result.append(C)
+        else:
+            result.append(impact)
+    return result
+
+# Example
+weights = [4, 2, 7, 3]
+C = 10
+print(impactSum(weights, C))  # [10, 10, 9, 10]
