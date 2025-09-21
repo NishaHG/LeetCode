@@ -17,3 +17,22 @@ def product_except_self(nums):
 
 # Example
 print(product_except_self([1,2,3,4]))  # Output: [24,12,8,6]
+
+--------------------------------------------------------------------------------------------------
+
+# 2 ----->  It will not work for Zero
+
+def product_except_self_division(nums):
+    total_product = 1
+    for num in nums:
+        total_product *= num
+
+    result = []
+    for num in nums:
+        result.append(total_product // num)  # use // for integers, / for float
+
+    return result
+
+# Example
+nums = [1, 2, 3, 4]
+print(product_except_self_division(nums))  # Output: [24, 12, 8, 6]
