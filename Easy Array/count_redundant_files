@@ -1,0 +1,62 @@
+from collections import defaultdict
+
+def count_redundant_files(fileName, Timestamp, limit=86400):
+    files = defaultdict(list)
+
+    for f, t in zip(fileName, Timestamp):
+        if t < limit:
+            files[f].append(t)
+
+    redundant_count = sum(1 for f in files if len(files[f]) >= 3)
+    return redundant_count
+
+
+# Example usage
+fileName = ['sales', 'design', 'design', 'sales', 'sales']
+Timestamp = [24000, 32000, 12000, 83000, 28000]
+
+print("Redundant files count:", count_redundant_files(fileName, Timestamp))
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+# 2  ----> 
+
+
+from collections import defaultdict
+
+def count_redundant_files(fileName, Timestamp, limit=86400):
+    files = defaultdict(list)
+
+    # using zip to pair fileName and Timestamp
+    for f, t in zip(fileName, Timestamp):
+        if t < limit:
+            files[f].append(t)
+
+   redundant_count = 0
+   for f in files:
+       if len(files[f]) >= 3:
+          redundant_count += 1
+
+
+# Example usage
+fileName = ['sales', 'design', 'design', 'sales', 'sales']
+Timestamp = [24000, 32000, 12000, 83000, 28000]
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+from collections import defaultdict
+def count_redundant_files(fileName, Timestamp, limit=86400):
+    files = defaultdict(list)
+
+    # using index instead of zip
+    for i in range(len(fileName)):
+        f = fileName[i]
+        t = Timestamp[i]
+        if t < limit:
+            files[f].append(t)
+
+    # count redundant files (>= 3 entries)
+    redundant_count = sum(1 for f in files if len(files[f]) >= 3)
+    return redundant_count
+
+
