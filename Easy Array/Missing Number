@@ -7,4 +7,18 @@ class Solution:
         for num in nums:               ## [0,3,1]   missing from above loop is 2
             xoar^=num
         return xoar
+-----------------------------------------------------------------------------------------------------------------------------
         
+#2
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n=len(nums)
+        total=n*(n+1)//2
+        miss=total-sum(nums)
+        return miss
+-----------------------------------------------------------------------------------------------------------------------
+       
+ #3
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        return len(nums)*(len(nums)+1)//2-sum(nums)
